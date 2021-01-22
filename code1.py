@@ -53,10 +53,10 @@ if __name__ == '__main__':
     dstImg = convolution(imgArr, kernel)
 
     # Converting array to back to image
-    img = Image.fromarray(dstImg)
+    dstImg = Image.fromarray(dstImg)
 
-    # Displaying Image
-    img.show()
-
+    # Displaying both original and resultant images
+    grayImg.show()
+    dstImg.show()
 
 
