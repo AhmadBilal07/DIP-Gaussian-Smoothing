@@ -5,12 +5,12 @@ from PIL import Image,ImageOps
 def convolution(image, kernel):
     m, n = kernel.shape
     if (m == n):
-        y, x = image.shape
-        y = y - m + 1
+        x, y = image.shape
         x = x - m + 1
-        resultImg = np.zeros((y,x))
-        for i in range(y):
-            for j in range(x):
+        y = y - m + 1
+        resultImg = np.zeros((x,y))
+        for i in range(x):
+            for j in range(y):
                 resultImg[i][j] = np.sum(image[i:i+m, j:j+m]*kernel)
     return resultImg
 
